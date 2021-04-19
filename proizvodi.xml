@@ -1,0 +1,33 @@
+<Proizvodi>
+    <Proizvod kategorija="laptopovi">
+        <cena>
+            67000
+        </cena>
+        <tekst>
+            Neki tekst oglasa za laptop u vrednosti od 67000 dinara
+        </tekst>
+        <tagovi>
+            <tag>Racunar</tag>
+            <tag>Office</tag>
+            <tag>Windows</tag>
+        </tagovi>
+        <akcije>
+            <akcija cena="57000" datum="2020-04-29"/>
+        </akcije>
+    </Proizvod>
+    <Proizvod kategorija="monitori">
+        <cena valuta="eur">
+            550
+        </cena>
+        <tekst>
+            Neki tekst oglasa za monitor u vrednosti od 67000 dinara
+        </tekst>
+        <tagovi>
+            <tag>Racunar</tag>
+            <tag>Office</tag>
+        </tagovi>
+        <akcije>
+            <akcija cena="500" datum="2020-05-11"/>
+        </akcije>
+    </Proizvod>
+</Proizvodi>
