@@ -1,3 +1,4 @@
+<!DOCTYPE Proizvodi SYSTEM "proizvodi.dtd">
 <Proizvodi>
     <Proizvod kategorija="laptopovi">
         <cena>
