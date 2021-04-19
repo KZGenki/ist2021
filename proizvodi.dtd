@@ -4,8 +4,10 @@
 <!ELEMENT tekst (#PCDATA)>
 <!ELEMENT tagovi (tag+)>
 <!ELEMENT akcije (akcija*)>
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT akcija EMPTY>
 <!ATTLIST Proizvod kategorija (laptopovi|monitori|stolovi|stolice) #REQUIRED>
 <!ATTLIST cena valuta (rsd|eur) "rsd">
 <!ATTLIST akcija 
-    cena (CDATA) #REQUIRED
-    datum (CDATA) #REQUIRED>
+    cena CDATA #REQUIRED
+    datum CDATA #REQUIRED>
