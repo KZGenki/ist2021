@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Proizvodi SYSTEM "proizvodi.dtd">
-<Proizvodi>
+<Proizvodi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="proizvodi.xsd">
     <Proizvod kategorija="laptopovi">
         <cena>
             67000

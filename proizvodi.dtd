@@ -6,6 +6,9 @@
 <!ELEMENT akcije (akcija*)>
 <!ELEMENT tag (#PCDATA)>
 <!ELEMENT akcija EMPTY>
+<!ATTLIST Proizvodi
+    xmlns:xsi CDATA #REQUIRED
+    xsi:noNamespaceSchemaLocation CDATA #REQUIRED>
 <!ATTLIST Proizvod kategorija (laptopovi|monitori|stolovi|stolice) #REQUIRED>
 <!ATTLIST cena valuta (rsd|eur) "rsd">
 <!ATTLIST akcija 
