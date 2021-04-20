@@ -18,6 +18,28 @@ let storeJSON = (data)=>{
     fs.writeFileSync(PATH, JSON.stringify(data))
 }
 
+let dodajProizvod = (novProizvod)=>{
+    try{
+        proizvodi = loadJSON()
+    }
+    catch{
+        proizvodi = []
+    }
+    finally{
+        if(proizvodi.length=0){
+            id = 0
+        }
+        else{
+            id = proizvodi[proizvodi.length-1].id+1
+        }
+        novProizvod.id=id
+        proizvodi.push(novProizvod)
+        storeJSON(proizvodi)
+    }
+    
+}
+
+
 app.get('/',(request,response)=>{
     response.send("Server radi")
 })
