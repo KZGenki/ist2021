@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Proizvodi
+    <br>
+    <nav>
+        <a href="/allProizvodi">Pogledaj sve proizvode</a>
+        <a href="/addProizvod">Dodaj proizvod</a>
+    </nav>
+    <br>
+    <table>
+        <tr>
+            <th>id</th><th>kategorija</th><th>cena</th><th>tekst</th><th>Tagovi</th><th>Ostalo</th>
+        </tr>
+        <tr>$[data.proizvod]</tr>
+    </table>
+    <br>
+    Akcije
+    <br>
+    <table>
+        <tr><th>Cena</th><th>Datum isteka</th></tr>
+        $[data.akcije]
+    </table>
+    <form action="$[data.url]" method="POST">
+        <label for="">Cena</label><br>
+        <input type="text" name="cena">
+        <label for="">Valuta</label>
+        <select name="valuta" id="valuta">
+            <option value="rsd" selected>RSD</option>
+            <option value="eur">EUR</option>
+        </select><br>
+        <label for="">Datum isteka</label><br>
+        <input type="date" name="date"><br>
+        <button type="submit">Dodaj akciju</button>
+    </form>
+</body>
+</html>

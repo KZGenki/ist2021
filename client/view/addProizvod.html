@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Proizvodi
+    <br>
+    <nav>
+        <a href="/allProizvodi">Pogledaj sve proizvode</a>
+        <a href="/addProizvod">Dodaj proizvod</a>
+    </nav>
+    <br>
+    <form action="/saveProizvod" method="POST">
+        <label for="">Kategorija</label>
+        <select name="kategorija" id="kategorija">
+            <option value="Laptopovi" selected>Laptopovi</option>
+            <option value="Monitori">Monitori</option>
+            <option value="Stolovi">Stolovi</option>
+            <option value="Stolice">Stolice</option>
+        </select><br>
+        <label for="">Cena</label><br>
+        <input type="text" name="cena">
+        <label for="">Valuta</label>
+        <select name="valuta" id="valuta">
+            <option value="rsd" selected>RSD</option>
+            <option value="eur">EUR</option>
+        </select><br>
+        <label for="">Tekst</label><br>
+        <input type="text" name="tekst"><br>
+        <label for="">Tagovi</label><br>
+        <input type="text" name="tagovi"><br>
+        <button type="submit">Dodaj proizvod</button>
+    </form>
+</body>
+</html>

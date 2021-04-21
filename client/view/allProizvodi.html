@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Proizvodi
+    <br>
+    <nav>
+        <a href="/allProizvodi">Pogledaj sve proizvode</a>
+        <a href="/addProizvod">Dodaj proizvod</a>
+    </nav>
+    <br>
+    <form action="/filterProizvodi" method="post">
+        <label for="">Tagovi</label>
+        <input type="text" name="tagovi">
+        <button type="submit">Primeni</button>
+    </form>
+    <table>
+        <tr>
+            <th>id</th><th>kategorija</th><th>cena</th><th>tekst</th><th>akcije</th><th>Tagovi</th><th>Ostalo</th>
+        </tr>
+        $[data]
+    </table>
+</body>
+</html>
