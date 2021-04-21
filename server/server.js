@@ -48,11 +48,11 @@ app.get('/',(request,response)=>{
 
 app.get("/allProizvodi",(request,response)=>{
     response.send(sviProizvodi())//loadJSON()
-    console.log("/allProizvodi")
+    //console.log("/allProizvodi")
 })
 
 app.post("/addProizvod",(request,response)=>{
-    console.log(request.body)
+    //console.log(request.body)
     dodajProizvod(request.body)
     response.end("OK")
 })
@@ -60,12 +60,12 @@ app.post("/addProizvod",(request,response)=>{
 app.get("/getProizvod/:id", (request,response)=>{
     id = request.params["id"]
     proizvod = sviProizvodi().filter(proizvod=>proizvod.id==id)
-    console.log(proizvod)
+    //console.log(proizvod)
     response.send(proizvod)
 })
 
 app.post("/addAkcija/:id",(request,response)=>{
-    console.log(request.body)
+    //console.log(request.body)
     id = request.params["id"]
     akcije = request.body
     proizvodi = sviProizvodi()
@@ -83,6 +83,49 @@ app.delete("/deleteProizvod/:id",(request,response)=>{
     proizvodi = sviProizvodi().filter(proizvod=>proizvod.id!=id)
     storeJSON(proizvodi)
     response.end("OK")
+})
+
+app.post("/editProizvod/:id",(request,response)=>{
+    id = request.params["id"]
+    proizvod = request.body
+    console.log(request.body)
+    proizvodi = sviProizvodi()
+    proizvodi.forEach(pr =>{
+        if(pr.id==id){
+            pr.tekst = proizvod.tekst
+            pr.cena = proizvod.cena
+            pr.kategorija = proizvod.kategorija
+            pr.tagovi = proizvod.tagovi
+        }
+    })
+    storeJSON(proizvodi)
+    response.end("OK")
+})
+
+app.get("/searchTagsProizvodi/:tags",(request,response)=>{
+    console.log(request.params["tags"])
+    tagovi = request.params["tags"]
+    tags = tagovi.split(" ")
+    proizvodi = sviProizvodi()
+    filtrirano=[]
+    finalList=[]
+    tags.forEach(tag=>{
+        filter = proizvodi.filter(proizvod=>proizvod.tagovi.includes(tag))
+        filtrirano.push(filter)
+    })
+    filtrirano.forEach(filter=>{
+        if(finalList.length==0){
+            finalList = filter
+        }
+        else{
+            filter.forEach(proizvod=>{
+                if(finalList.filter(p=>p.id==proizvod.id).length==0){
+                    finalList.push(proizvod)
+                }
+            })
+        }
+    })
+    response.send(finalList)
 })
 
 app.listen(port,()=>{console.log(`Server startovan na portu ${port}...`)})
